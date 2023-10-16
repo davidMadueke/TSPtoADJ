@@ -24,14 +24,17 @@ This function parses an XML file defining a TSP (from TSPLIB
             There was an error parsing the file.
             See: https://docs.python.org/2.7/library/xml.etree.elementtree.html
 
-print_matrix(mat, showall=False):
+print_matrix(mat, showall=False, linewidth=1000, threshold=5000):
 
     # this forces to print all elements on a long row, on the next line
     # otherwise, center elements are snipped '...,' to fit line of 100
 
     Args:
             mat: The adjacency matrix to be printed.
-            showall (bool): If true, this forces to print all elements on a long row, on the next line otherwise, center elements are snipped '...,' to fit line of 100
+            showall (bool, optional): If true, this forces to print all elements on a long row, on the next line otherwise, center elements are snipped '...,' to fit line of 100
+            linewidth (int, optional): The number of characters per line for the purpose of inserting line breaks (default 1000).
+            threshold (int, optional): Total number of array elements which trigger summarization rather than full repr (default 5000).
+
     Returns:
             none
             

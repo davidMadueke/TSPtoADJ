@@ -54,13 +54,13 @@ def read_tsplib(file_name):
 
     return adj_mat
 
-def print_matrix(mat, show_all=False):
+def print_matrix(mat, show_all=False, linewidth=1000, threshold=5000):
     import numpy
-    numpy.set_printoptions(linewidth=100)
+    numpy.set_printoptions(linewidth=linewidth)
     numpy.set_printoptions(precision=3)
     # this forces to print all elements on a long row, on the next line
     # otherwise, center elements are snipped '...,' to fit line of 100
     if show_all:
-        numpy.set_printoptions(threshold='nan')
+        numpy.set_printoptions(threshold=threshold)
 
     print(numpy.array(mat))
